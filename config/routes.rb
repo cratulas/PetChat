@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   get 'home/indexVisit'
   get 'home/indexUser'
 
@@ -8,11 +10,6 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
 
-  devise_for :admins, controllers: {
-    sessions: 'admins/sessions',
-    passwords: 'admins/passwords',
-    registrations: 'admins/registrations'
-  }
   devise_for :veterinaries, controllers: {
     sessions: 'veterinaries/sessions',
     passwords: 'veterinaries/passwords',
