@@ -32,13 +32,8 @@ gem 'cocoon'
 gem 'aws-sdk-s3'
 gem 'activestorage-validator'
 gem 'image_processing', '~> 1.2'
-gem 'toastr-rails'
-
 gem 'activeadmin'
 gem 'devise'
-gem 'cancancan'
-gem 'draper'
-gem 'pundit'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
