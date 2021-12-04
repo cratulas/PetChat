@@ -4,4 +4,8 @@ class HomeController < ApplicationController
 
   def indexUser
   end
+
+  def market
+    @products = Product.all
+  end
 end

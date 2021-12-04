@@ -1,8 +1,22 @@
 Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
+
+  root to: "home#indexVisit"
+  
+  resources :products
+
+  resource :cart, only: [:show, :update] do
+    member do
+      post :pay_with_paypal
+      get :process_paypal_payment
+    end
+  end
+
+
   get 'home/indexVisit'
   get 'home/indexUser'
+  get 'home/market'
   
   devise_for :users, controllers: {
     sessions: 'users/sessions',
@@ -15,6 +29,9 @@ Rails.application.routes.draw do
     passwords: 'veterinaries/passwords',
     registrations: 'veterinaries/registrations'
   }
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root to: "home#indexVisit"
+
+  # authenticate :admin do
+  #   resources :products
+  #   resources :categories
+  # end
 end
