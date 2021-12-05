@@ -13,6 +13,8 @@
 //= require rails-ujs
 //= require activestorage
 //= require jquery/dist/jquery
+//= require jquery.raty
+//= require ratyrate
 //= require popper
 //= require bootstrap
 //= require turbolinks
