@@ -3,6 +3,7 @@ class HomeController < ApplicationController
   end
 
   def indexUser
+    @users = User.all
   end
 
   def market
